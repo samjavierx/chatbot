@@ -5,7 +5,6 @@ const express = require("express");
 const app = express();
 const server = express();
 const http         = require('http');
-const config       = require('../API/config');
 const mongoose = require("mongoose");
 const bodyParser   = require('body-parser');
 const company = require('../API/model/company');
