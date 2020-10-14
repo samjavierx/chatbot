@@ -1,0 +1,5 @@
+module.exports =
+{
+ dbUrl: "mongodb+srv://test:test@cluster0.9slz7.mongodb.net/student?retryWrites=true&w=majority"
+
+}
