@@ -16,13 +16,13 @@ exports.processRequest = function(req,res){
 async function getCompanies(req,res)
 {
     let parameters = req.body.result.parameters;
-    let specificCourse = parameters.company_course;
+    let company_course = parameters.company_course;
     if (req.query.course != null && req.query.course !== '')
     {
-        specificCourse = new RegExp(req.query.course,'i')
+        company_course = new RegExp(req.query.course,'i')
     }
     try {
-        const companies = await (await company.find({course: specificCourse},{company_name: 1}))
+        const companies = await (await company.find({course: company_course},{company_name: 1}))
         res.json(companies)
     } catch (error) {
         res.status(500).json({message: error.message})
