@@ -16,7 +16,7 @@ db.once('open',()=>console.log('Connected to Database'))
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 
-const routes = require('../API/routes/router');
+const routes = require('./routes/router');
 routes(server);
 
 const PORT = process.env.PORT || 3000;
