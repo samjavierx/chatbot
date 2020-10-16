@@ -14,11 +14,11 @@ const db = mongoose.connection
 db.on('error',(error)=>console.error(error))
 db.once('open',()=>console.log('Connected to Database'))
 
-server.use(bodyParser.urlencoded({ extended: true }));
-server.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const routes = require('../API/routes/router');
 routes(server);
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, ()=> console.log('Server Started'))
+app.listen(PORT, ()=> console.log('Server Started'))
