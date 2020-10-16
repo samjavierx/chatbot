@@ -7,7 +7,6 @@ const server = express();
 const http         = require('http');
 const mongoose = require("mongoose");
 const bodyParser   = require('body-parser');
-const company = require('../API/model/company');
 
 mongoose.connect(process.env.DATABASE_URL,{ useUnifiedTopology: true, useNewUrlParser: true })
 const db = mongoose.connection
