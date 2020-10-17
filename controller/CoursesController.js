@@ -22,8 +22,8 @@ async function getCompanies(req,res)
         company_course = new RegExp(req.query.course,'i')
     }
     try {
-        const companies = await (await company.find({course: company_course},{company_name: 1}))
-        res.json(companies)
+        const companies = await (await company.find({course: company_course},{company_name: 1})).toString({})
+        res.json({"displayText": companies})
     } catch (error) {
         res.status(500).json({message: error.message})
     }
