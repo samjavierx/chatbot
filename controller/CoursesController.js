@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const company = require('../model/company');
 
 exports.processRequest = function(req,res){
-    if(req.body.result.action == "companies"){
+    if(req.body.queryResult.action == "companies"){
         getCompanies(req,res)
     }
     else{
@@ -15,7 +15,7 @@ exports.processRequest = function(req,res){
 
 async function getCompanies(req,res)
 {
-    let parameters = req.body.result.parameters;
+    let parameters = req.body.queryResult.parameters;
     let company_course = parameters.company_course;
     if (req.query.course != null && req.query.course !== '')
     {
