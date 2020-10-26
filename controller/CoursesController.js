@@ -22,7 +22,7 @@ async function getCompanies(req,res)
         company_course = new RegExp(req.query.course,'i')
     }
     try {
-        const companies = await (await company.find({course: company_course},{company_name: 1}))
+        const companies = await (await company.find({course: company_course},{_id: 0}))
         const display = {fulfillmentText: "Here is the list of companies: \n"  + companies};
         res.send(JSON.stringify(display))
     } catch (error) {
