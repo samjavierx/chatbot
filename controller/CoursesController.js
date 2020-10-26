@@ -23,7 +23,7 @@ async function getCompanies(req,res)
     }
     try {
         const companies = await (await company.find({course: company_course},{company_name: 1,company_address: 1, _id: 0}))
-        const display = {fulfillmentText: "Here is the list of companies for" + course + ":\n"  + companies};
+        const display = {fulfillmentText: "Here is the list of companies for" + company_course + ":\n"  + companies};
         res.send(JSON.stringify(display))
     } catch (error) {
         res.status(500).json({message: error.message})
